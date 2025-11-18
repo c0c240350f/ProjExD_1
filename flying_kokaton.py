@@ -25,20 +25,17 @@ def main():
         screen.blit(bg_img2, [-x+1600, 0])#練習8
         screen.blit(bg_img, [-x+3200, 0])
 
-        x=0
-        y=0
         key_lst=pg.key.get_pressed()
+        x=[-1,0]
         if key_lst[pg.K_UP]:
-            y-=1
-        elif key_lst[pg.K_DOWN]:
-            y+=1
-        elif key_lst[pg.K_LEFT]:
-            x-=1
-        elif key_lst[pg.K_RIGHT]:
-            x=+1
-        else:
-            x-=1
-        kk_rect.move_ip((x,y))
+            x[1]=-1
+        if key_lst[pg.K_DOWN]:
+            x[1]=+1
+        if key_lst[pg.K_LEFT]:
+            x[0]=-2
+        if key_lst[pg.K_RIGHT]:
+            x[0]=+1
+        kk_rect.move_ip((x))
         screen.blit(kk_img,kk_rect)#練習１０
         pg.display.update()
         tmr += 1        
