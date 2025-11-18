@@ -34,6 +34,8 @@ def main():
             kk_rect.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
             kk_rect.move_ip((+1,0))
+        else:
+            kk_rect.move_ip((-1,0))
         screen.blit(kk_img,kk_rect)#練習１０
         pg.display.update()
         tmr += 1        
